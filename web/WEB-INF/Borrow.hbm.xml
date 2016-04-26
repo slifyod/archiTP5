@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.polytech.di4.si.archi.model.Borrow" table="BORROW">
+        <meta attribute="class-description">
+            This class contains the book informations.
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+        <one-to-one name="user" class="com.polytech.di4.si.archi.model.User" constrained="true"></one-to-one>
+        <one-to-one name="book" class="com.polytech.di4.si.archi.model.Book" constrained="true"></one-to-one>
+        <property name="deadline" column="deadline" type="date"/>
+    </class>
+</hibernate-mapping>
