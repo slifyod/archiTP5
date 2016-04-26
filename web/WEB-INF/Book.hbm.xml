@@ -13,7 +13,7 @@
         </id>
         <property name="name" column="name" type="string"/>
         <property name="type" column="type" type="string"/>
-
+        <!-- list attribute-->
         <list name="authors" cascade="all">
             <key column="id"/>
             <list-index column="0"/>
