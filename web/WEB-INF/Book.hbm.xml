@@ -17,7 +17,7 @@
         <list name="authors" cascade="all">
             <key column="id"/>
             <list-index column="0"/>
-            <one-to-many class="Author"/>
+            <one-to-many class="com.polytech.di4.si.archi.model.Author"/>
         </list>
     </class>
 </hibernate-mapping>
