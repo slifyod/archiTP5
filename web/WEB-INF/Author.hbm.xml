@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="Author" table="AUTHOR">
+    <class name="com.polytech.di4.si.archi.model.Author" table="AUTHOR">
         <meta attribute="class-description">
             This class contains the author informations.
         </meta>
