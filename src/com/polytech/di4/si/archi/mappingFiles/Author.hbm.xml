@@ -4,14 +4,13 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.polytech.di4.si.archi.model.User" table="USER">
+    <class name="com.polytech.di4.si.archi.model.Author" table="AUTHOR" optimistic-lock="version">
         <meta attribute="class-description">
-            This class contains the user inforrmations.
+            This class contains the author informations.
         </meta>
-        <id name="id" type="int" column="id">
+        <id name="author_id" column="author_id" type="int" >
             <generator class="native"/>
         </id>
         <property name="name" column="name" type="string"/>
-        <property name="password" column="password" type="string"/>
     </class>
 </hibernate-mapping>

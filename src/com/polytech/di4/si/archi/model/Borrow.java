@@ -6,17 +6,17 @@ import java.util.Date;
  * Created by linux on 26/04/16.
  */
 public class Borrow {
-    private long id;
+    private long borrow_id;
     private User user;
     private Book book;
     private Date deadline;
 
-    public long getId() {
-        return id;
+    public long getBorrow_id() {
+        return borrow_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setBorrow_id(long id) {
+        this.borrow_id = id;
     }
 
     public User getUser() {

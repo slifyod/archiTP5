@@ -4,11 +4,27 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url"/>
+
+        <!-- AUTO GENERATED
         <property name="connection.driver_class"/>
+        <property name="connection.url"/>
         <property name="connection.username"/>
-        <property name="connection.password"/>
+        <property name="connection.password"/>-->
+
+        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/archi_tp5</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">password</property>
+        <property name="hibernate.dialect"> org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+
+        <!-- List of XML mapping files -->
+        <mapping resource="./com/polytech/di4/si/archi/mappingFiles/Author.hbm.xml"/>
+        <mapping resource="./com/polytech/di4/si/archi/mappingFiles/User.hbm.xml"/>
+        <mapping resource="./com/polytech/di4/si/archi/mappingFiles/Type.hbm.xml"/>
+        <mapping resource="./com/polytech/di4/si/archi/mappingFiles/Book.hbm.xml"/>
+        <mapping resource="./com/polytech/di4/si/archi/mappingFiles/Borrow.hbm.xml"/>
         <!-- DB schema will be updated if needed -->
-        <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
 </hibernate-configuration>

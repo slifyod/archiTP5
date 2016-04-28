@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.polytech.di4.si.archi.model.Book" table="BOOK" optimistic-lock="version">
+        <meta attribute="class-description">
+            This class contains the book informations.
+        </meta>
+        <id name="book_id" type="int" column="book_id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="name" type="string"/>
+
+        <set name="authors" table="AUTHORS_BOOKS" inverse="false" lazy="true" fetch="select" cascade="all" >
+            <key><column name="book_id" not-null="true" /></key>
+            <many-to-many entity-name="com.polytech.di4.si.archi.model.Author">
+                <column name="author_id" not-null="true" />
+            </many-to-many>
+        </set>
+
+        <set name="types" table="TYPES_BOOKS" inverse="false" lazy="true" fetch="select" cascade="all" >
+            <key><column name="book_id" not-null="true" /></key>
+            <many-to-many entity-name="com.polytech.di4.si.archi.model.Type">
+                <column name="type_id" not-null="true" />
+            </many-to-many>
+        </set>
+
+    </class>
+</hibernate-mapping>

@@ -1,22 +1,24 @@
 package com.polytech.di4.si.archi.model;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by linux on 26/04/16.
  */
 public class Book {
-    private long id;
+    private long book_id;
     private String name;
-    private Type type;
-    private List<Author> authors;
 
-    public long getId() {
-        return id;
+    private Set<Type> types= new HashSet<Type>(0);
+    private Set<Author> authors= new HashSet<Author>(0);
+
+    public long getBook_id() {
+        return book_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setBook_id(long id) {
+        this.book_id = id;
     }
 
     public String getName() {
@@ -27,19 +29,20 @@ public class Book {
         this.name = name;
     }
 
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }
-
-    public List<Author> getAuthors() {
+    public Set<Author> getAuthors() {
         return authors;
     }
 
-    public void setAuthors(List<Author> authors) {
+    public void setAuthors(Set<Author> authors) {
         this.authors = authors;
     }
+
+    public Set<Type> getTypes() {
+        return types;
+    }
+
+    public void setTypes(Set<Type> types) {
+        this.types = types;
+    }
+
 }

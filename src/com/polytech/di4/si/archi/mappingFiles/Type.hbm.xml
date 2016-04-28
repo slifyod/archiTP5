@@ -4,11 +4,11 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.polytech.di4.si.archi.model.Type" table="TYPE">
+    <class name="com.polytech.di4.si.archi.model.Type" table="TYPE" optimistic-lock="version">
         <meta attribute="class-description">
             This class contains the type informations.
         </meta>
-        <id name="id" type="int" column="id">
+        <id name="type_id" type="int" column="type_id">
             <generator class="native"/>
         </id>
         <property name="name" column="name" type="string"/>
