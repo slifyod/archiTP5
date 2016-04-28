@@ -27,4 +27,10 @@ public class Author {
         this.name = name;
     }
 
+    public boolean hasMaxNumberOfBooks()
+    {
+
+
+        return false;
+    }
 }
