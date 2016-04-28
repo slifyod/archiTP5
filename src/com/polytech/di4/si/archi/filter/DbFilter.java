@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Created by linux on 28/04/16.
  */
-@WebFilter(filterName = "DbFilter")
+@WebFilter(filterName = "DbFilter", urlPatterns = "/*")
 public class DbFilter implements Filter {
     public void destroy() {
     }
