@@ -8,11 +8,13 @@
         <meta attribute="class-description">
             This class contains the book informations.
         </meta>
-        <id name="borrow_id" type="int" column="borrow_id">
+        <id name="borrow_id" column="borrow_id" type="int">
             <generator class="native"/>
         </id>
-        <one-to-one name="user" class="com.polytech.di4.si.archi.model.User" cascade="save-update"></one-to-one>
-        <one-to-one name="book" class="com.polytech.di4.si.archi.model.Book" cascade="save-update"></one-to-one>
+        <many-to-one name="user" column="user" class="com.polytech.di4.si.archi.model.User" not-null="true"
+                     cascade="all"/>
+        <many-to-one name="book" column="book" class="com.polytech.di4.si.archi.model.Book" not-null="true"
+                     cascade="all"/>
         <property name="deadline" column="deadline" type="date"/>
     </class>
 </hibernate-mapping>

@@ -11,7 +11,7 @@
         <property name="connection.username"/>
         <property name="connection.password"/>-->
 
-        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="hbm2ddl.auto">update</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost/archi_tp5</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">password</property>
