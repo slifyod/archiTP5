@@ -1,3 +1,5 @@
+package com.polytech.di4.si.archi;
+
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
@@ -12,7 +14,7 @@ import java.util.Map;
 /**
  * Created by linux on 26/04/16.
  */
-public class Main
+public class Db
 {
     private static final SessionFactory ourSessionFactory;
     private static final ServiceRegistry serviceRegistry;
@@ -33,7 +35,7 @@ public class Main
         return ourSessionFactory.openSession();
     }
 
-    public static void main(final String[] args) throws Exception {
+    public static void start() throws Exception {
         final Session session = getSession();
         try {
             System.out.println("querying all the managed entities...");
