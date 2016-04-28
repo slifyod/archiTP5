@@ -14,7 +14,7 @@
   </head>
   <body>
     <c:forEach var="book" items="${requestScope.books}">
-        Name = <c:out value="${book.name}"/><br>
+        <c:out value="${book}"/><br>
 
     </c:forEach>
 

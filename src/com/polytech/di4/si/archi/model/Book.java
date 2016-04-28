@@ -1,6 +1,7 @@
 package com.polytech.di4.si.archi.model;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -45,4 +46,20 @@ public class Book {
         this.types = types;
     }
 
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Name = ").append(name).append("\n");
+        builder.append("Authors = ");
+        for (Author author:authors) {
+            builder.append(author.getName()).append(",");
+        }
+
+        builder.append("\nTypes = ");
+        for (Type type:types) {
+            builder.append(type.getName()).append(",");
+        }
+        return builder.toString();
+    }
 }

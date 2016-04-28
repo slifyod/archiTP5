@@ -1,5 +1,7 @@
 package com.polytech.di4.si.archi.view;
 
+import com.polytech.di4.si.archi.model.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,12 +29,15 @@ public class LoginServlet extends HttpServlet {
         String login = req.getParameter("login");
         String password = req.getParameter("password");
 
+        //TODO test if combination of login and pass is right
         if (login.equals("login") && password.equals("password")) {
-            session.setAttribute("authenticated", "yes");
+            User user = new User();
+            //TODO store the user in the var user
+                session.setAttribute("authenticated", user);
             resp.sendRedirect(getServletContext().getContextPath()+"/restrict/home");
         }
         else {
-            session.setAttribute("authenticated", "no");
+            session.setAttribute("authenticated", null);
             resp.sendRedirect(getServletContext().getContextPath()+"/login");
         }
     }

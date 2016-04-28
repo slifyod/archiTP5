@@ -1,5 +1,7 @@
 package com.polytech.di4.si.archi.filter;
 
+import com.polytech.di4.si.archi.model.User;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -23,8 +25,8 @@ public class AuthenticationFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
         HttpSession session = httpRequest.getSession();
 
-        String auth = (String) session.getAttribute("authenticated");
-        if ("yes".equals(auth)) {
+        User user = (User) session.getAttribute("authenticated");
+        if (user != null) {
             chain.doFilter(servletRequest, servletResponse);
         } else {
             httpResponse.sendRedirect(servletContext.getContextPath() + "/login");
