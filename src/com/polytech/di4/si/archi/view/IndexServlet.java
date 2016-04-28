@@ -20,13 +20,6 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Book> books = new ArrayList<>();
-        Book book1 = new Book();
-        Book book2 = new Book();
-        book1.setName("harry potter");
-        book2.setName("dragon");
-
-        books.add(book1);
-        books.add(book2);
         req.setAttribute("books",books);
         this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(req, resp);
     }
