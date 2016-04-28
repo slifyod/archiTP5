@@ -20,6 +20,7 @@ public class DbFilter implements Filter {
 
     public void init(FilterConfig config) throws ServletException {
         try {
+
             Db.start();
         } catch (Exception e) {
             e.printStackTrace();
